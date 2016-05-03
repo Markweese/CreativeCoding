@@ -17,10 +17,12 @@ class ofApp : public ofBaseApp{
     
    
         ofImage tradeGroups;
+        ofImage cog;
         ofxSVG svg;
         ofxCsv csv;
         ofFbo fbo;
         float circleSize;
+        float rotation;
     
      
     

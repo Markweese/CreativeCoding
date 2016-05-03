@@ -25,6 +25,7 @@ void ofApp::setup(){
     loadDataset("Electronic.csv");
     
     tradeGroups.load("TradeGroups.jpg");
+    cog.load("cog.png");
     
 }
 
@@ -102,7 +103,7 @@ void ofApp::update(){
             float tradeValue = row.getFloat(1);
             
             if (datasetNames[currentDataset] == "Petroleum"){
-                EuCircleSize = ofMap(tradeValue, 60, 65000000000, 5, 15);
+                EuCircleSize = ofMap(tradeValue, 60, 65000000000, 2, 15);
                 EUhardValue = "  Europe\n""$ 61";
             } else if (datasetNames[currentDataset] == "Electronic"){
                 EuCircleSize = ofMap(tradeValue, 1000000000, 25000000000, 5, 15);
@@ -119,10 +120,7 @@ void ofApp::update(){
             
             float tradeValue = row.getFloat(1);
             
-            if (datasetNames[currentDataset] == "Petroleum"){
-                AsCircleSize = ofMap(tradeValue, 60, 65000000000, 5, 15);
-                AsHardValue = "Asia";
-            } else if (datasetNames[currentDataset] == "Electronic"){
+            if (datasetNames[currentDataset] == "Electronic"){
                 AsCircleSize = ofMap(tradeValue, 1000000000, 25000000000, 5, 15);
                 AsHardValue = "  Asia\n""$ 14 Billion";
             } else if (datasetNames[currentDataset] == "Plastic"){
@@ -138,10 +136,7 @@ void ofApp::update(){
             
             float tradeValue = row.getFloat(1);
             
-            if (datasetNames[currentDataset] == "Petroleum"){
-                InCircleSize = ofMap(tradeValue, 60, 65000000000, 5, 15);
-                InHardValue = "India";
-            } else if (datasetNames[currentDataset] == "Electronic"){
+            if (datasetNames[currentDataset] == "Electronic"){
                 InCircleSize = ofMap(tradeValue, 1000000000, 25000000000, 5, 15);
                 InHardValue = "  India\n""$ 1.5 Billion";
             } else if (datasetNames[currentDataset] == "Plastic"){
@@ -266,13 +261,42 @@ void ofApp::update(){
         
     }
     
+    //placed these down here because the if statement was not working in context with other idia/Asia statements
+    
+    if (datasetNames[currentDataset] == "Petroleum"){
+        InCircleSize = 0;
+        InHardValue = "  India";
+    }
+    
+    if (datasetNames[currentDataset] == "Petroleum"){
+        AsCircleSize = 0;
+        AsHardValue = "  Asia";
+    }
+    
+    
+    rotation = rotation + 1;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     
-        //tradeGroups.draw(0, 0, ofGetWidth(), ofGetHeight());
+    //tradeGroups.draw(0, 0, ofGetWidth(), ofGetHeight());
+    ofPushMatrix();
+    ofTranslate(USendX-15, USendY-15);
+    ofRotate(rotation);
+    cog.draw(-25, -25, 50, 50);
+    ofPopMatrix();
+    
+    ofPushMatrix();
+    ofTranslate(USendX+15, USendY+15);
+    ofRotate(-rotation);
+    cog.draw(-15, -15, 30, 30);
+    ofPopMatrix();
+    
+   
+    ofSetColor(0, 130, 245);
+    ofDrawBitmapString("UNITED       STATES", USendX-90, USendY-5);
     
     //fbo.begin();
         //Europe trade lines
