@@ -2,12 +2,17 @@
 
 #include "ofMain.h"
 
+struct State;
+
 class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
 		void update();
 		void draw();
+    
+        // this get's called when a state was clicked
+        void stateClicked(string name);
 
 		void keyPressed(int key);
 		void keyReleased(int key);
@@ -22,18 +27,40 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
         void updateImageRect();
+        void generateStates();
     
         ofImage soundImage;
         float imageScaleX;
         float imageScaleY;
         ofRectangle imageRect;
-    
+        ofSoundPlayer NewNoise;
+        ofSoundPlayer TheOcean;
+        ofPolyline line;
         ofColor colorAtXY;
-        int rAtXY;
-        int gAtXY;
-        int bAtXY;
-        string darkBlue;
-        string lightBlue;
-        string yellow;
-        string orange;		
+        ofFbo fbo;
+    
+        vector<State> states;
+    
+};
+
+struct State {
+    
+    void clear() {
+        name = "";
+        line.clear();
+    }
+    
+    void draw() {
+        line.draw();
+    }
+    
+    void mousePressed(int x, int y) {
+        if(line.inside(x, y)) {
+            ofApp *app = (ofApp *)ofGetAppPtr();
+            app->stateClicked(name);
+        }
+    }
+    
+    string name;
+    ofPolyline line;
 };
