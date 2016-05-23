@@ -28,16 +28,27 @@ class ofApp : public ofBaseApp{
     
         void updateImageRect();
         void generateStates();
-    
+    //scaling variables and images
+        ofImage key;
         ofImage soundImage;
         float imageScaleX;
         float imageScaleY;
         ofRectangle imageRect;
+    
+    //player, polyline, color identifier, and directory declarators.
         ofSoundPlayer NewNoise;
-        ofSoundPlayer TheOcean;
         ofPolyline line;
         ofColor colorAtXY;
-        ofFbo fbo;
+        ofDirectory dir;
+    //stores file path string name for soundtracks
+        string path;
+    //stores name data to be displayed on screen
+        ofTrueTypeFont stampFont;
+    //stores song name from getName() function and displays it on screen
+        string songName;
+    //variable used in the song and text load so that both stay synched within the random calculation
+        int songVariable;
+    
     
         vector<State> states;
     
