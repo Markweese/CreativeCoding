@@ -26,6 +26,8 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
+        void playRandomTrack(string dirPath);
+    
         void updateImageRect();
         void generateStates();
     //scaling variables and images
@@ -46,9 +48,7 @@ class ofApp : public ofBaseApp{
         ofTrueTypeFont stampFont;
     //stores song name from getName() function and displays it on screen
         string songName;
-    //variable used in the song and text load so that both stay synched within the random calculation
-        int songVariable;
-    
+  
     
         vector<State> states;
     

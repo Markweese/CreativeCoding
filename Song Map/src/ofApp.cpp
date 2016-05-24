@@ -19,7 +19,6 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-    songVariable = ofRandom(dir.size());
     
 }
 
@@ -49,599 +48,454 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::stateClicked(string name) {
-    ofLog() << name;
-    //made to ensure that both song name and the loaded song stay consistent
-//    songVariable = ofRandom(dir.size());
     
     if(name == "New York"){
         if(colorAtXY.r > 110){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NY/Medium";
+            path = "Tracks/NY/Medium";
         }
         
         if(colorAtXY.r < 110){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NY/Loud";
+            path = "Tracks/NY/Loud";
         }
-        
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
-        ofLog()<<path;
+        playRandomTrack(path);
     }
     
     if(name == "California") {
         if(colorAtXY.b < 60){
-        path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CA/Quiet";
+        path = "Tracks/CA/Quiet";
         }
         
         if(colorAtXY.r < 200 && colorAtXY.b >60){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CA/Loud";
+            path = "Tracks/CA/Loud";
         }
         
         if(colorAtXY.r > 200){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CA/Medium";
+            path = "Tracks/CA/Medium";
         }
-        
-        ofDirectory dir(path);
-        dir.listDir();
-        songName = dir.getName(songVariable);
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(songVariable));
-        NewNoise.play();
-        ofLog()<<songName;
+        playRandomTrack(path);
     }
     
     if(name == "Washington") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WA/Quiet";
+            path = "Tracks/WA/Quiet";
         }
         
         if(colorAtXY.r < 220 && colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WA/Loud";
+            path = "Tracks/WA/Loud";
         }
         
         if(colorAtXY.r > 220){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WA/Medium";
+            path = "Tracks/WA/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
  
     if(name == "Utah") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/UT/Quiet";
+            path = "Tracks/UT/Quiet";
         }
 
         if(colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/UT/Medium";
+            path = "Tracks/UT/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Oregon") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OR/Quiet";
+            path = "Tracks/OR/Quiet";
         }
         
         if(colorAtXY.r < 220 && colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OR/Loud";
+            path = "Tracks/OR/Loud";
         }
         
         if(colorAtXY.r > 220){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OR/Medium";
+            path = "Tracks/OR/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     
     if(name == "Idaho") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/ID/Quiet";
+            path = "Tracks/ID/Quiet";
         }
         
         if(colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/ID/Medium";
+            path = "Tracks/ID/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     
     if(name == "Nevada") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NV/Quiet";
+            path = "Tracks/NV/Quiet";
         }
         
         if(colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NV/Medium";
+            path = "Tracks/NV/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     
     if(name == "Arizona") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/AZ/Quiet";
+            path = "Tracks/AZ/Quiet";
         }
         
         if(colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/AZ/Medium";
+            path = "Tracks/AZ/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Wyoming") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WY/Quiet";
+            path = "Tracks/WY/Quiet";
         }
         
         if(colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WY/Medium";
+            path = "Tracks/WY/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Montana") {
         if(colorAtXY.b < 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MT/Quiet";
+            path = "Tracks/MT/Quiet";
         }
         
         if(colorAtXY.b > 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MT/Medium";
+            path = "Tracks/MT/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     
     if(name == "Colorado") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CO/Quiet";
+            path = "Tracks/CO/Quiet";
         }
         
         if(colorAtXY.r < 220 && colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CO/Loud";
+            path = "Tracks/CO/Loud";
         }
         
         if(colorAtXY.r > 220){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CO/Medium";
+            path = "Tracks/CO/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "New Mexico") {
         if(colorAtXY.b < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NM/Quiet";
+            path = "Tracks/NM/Quiet";
         }
         
         if(colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NM/Medium";
+            path = "Tracks/NM/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Texas") {
         if(colorAtXY.b < 170){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/TX/Quiet";
+            path = "Tracks/TX/Quiet";
         }
         
         if(colorAtXY.r < 170 && colorAtXY.b > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/TX/Loud";
+            path = "Tracks/TX/Loud";
         }
         
         if(colorAtXY.r < 20){
-             path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/TX/Heavy";
+             path = "Tracks/TX/Heavy";
         }
         
         if(colorAtXY.r > 170){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/TX/Medium";
+            path = "Tracks/TX/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
 
     if(name == "Oklahoma") {
         if(colorAtXY.r > 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OK/Medium";
+            path = "Tracks/OK/Medium";
         }
         
         if(colorAtXY.r < 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OK/Loud";
+            path = "Tracks/OK/Loud";
         }
 
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Kansas") {
         if(colorAtXY.r < 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/KA/Loud";
+            path = "Tracks/KA/Loud";
         }
         
         if(colorAtXY.r > 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/KA/Medium";
+            path = "Tracks/KA/Medium";
         }
 
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Nebraska") {
         if(colorAtXY.r > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NE/Medium";
+            path = "Tracks/NE/Medium";
         }
         
         if(colorAtXY.r < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NE/Loud";
+            path = "Tracks/NE/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "South Dakota") {
         if(colorAtXY.r > 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/SD/Medium";
+            path = "Tracks/SD/Medium";
         }
         
         if(colorAtXY.r < 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/SD/Loud";
+            path = "Tracks/SD/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "North Dakota") {
         if(colorAtXY.r > 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/ND/Medium";
+            path = "Tracks/ND/Medium";
         }
         
         if(colorAtXY.r < 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/ND/Loud";
+            path = "Tracks/ND/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Minnesota") {
         if(colorAtXY.r > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MN/Medium";
+            path = "Tracks/MN/Medium";
         }
         
         if(colorAtXY.r < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MN/Loud";
+            path = "Tracks/MN/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Iowa") {
         if(colorAtXY.r > 50){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/IA/Medium";
+            path = "Tracks/IA/Medium";
         }
         
         if(colorAtXY.r < 50){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/IA/Loud";
+            path = "Tracks/IA/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Missouri") {
         if(colorAtXY.r < 30){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MO/Loud";
+            path = "Tracks/MO/Loud";
         }
         
         if(colorAtXY.r > 30){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MO/Medium";
+            path = "Tracks/MO/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
-    
+        playRandomTrack(path);
     }
     
     if(name == "Arkansas") {
         if(colorAtXY.r < 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/AK/Loud";
+            path = "Tracks/AK/Loud";
         }
         
         if(colorAtXY.r > 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/AK/Medium";
+            path = "Tracks/AK/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
-
+        playRandomTrack(path);
+        
     }
     
     if(name == "Louisianna") {
         if(colorAtXY.r < 20){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/LA/Loud";
+            path = "Tracks/LA/Loud";
         }
         
         if(colorAtXY.r > 20){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/LA/Medium";
+            path = "Tracks/LA/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Wisconsin") {
         if(colorAtXY.r > 110){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WI/Medium";
+            path = "Tracks/WI/Medium";
         }
         
         if(colorAtXY.r < 110){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WI/Loud";
+            path = "Tracks/WI/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Illinois") {
         if(colorAtXY.r < 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/IL/Loud";
+            path = "Tracks/IL/Loud";
         }
         
         if(colorAtXY.r > 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/IL/Medium";
+            path = "Tracks/IL/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
      
     }
     
     if(name == "Mississippi") {
         if(colorAtXY.r < 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MS/Loud";
+            path = "Tracks/MS/Loud";
         }
         
         if(colorAtXY.r > 10){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MS/Medium";
+            path = "Tracks/MS/Medium";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     }
     
     if(name == "Tenessee") {
         if(colorAtXY.r > 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/TN/Medium";
+            path = "Tracks/TN/Medium";
         }
         
         if(colorAtXY.r < 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/TN/Loud";
+            path = "Tracks/TN/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
     
     }
     
     if(name == "Kentucky") {
         if(colorAtXY.r > 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/KY/Medium";
+            path = "Tracks/KY/Medium";
         }
         
         if(colorAtXY.r < 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/KY/Loud";
+            path = "Tracks/KY/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Indiana") {
         if(colorAtXY.r > 40){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/IN/Medium";
+            path = "Tracks/IN/Medium";
         }
         
         if(colorAtXY.r < 40){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/IN/Loud";
+            path = "Tracks/IN/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
 
     }
     
     if(name == "Michigan") {
         if(colorAtXY.r > 110){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MI/Medium";
+            path = "Tracks/MI/Medium";
         }
         
         if(colorAtXY.r < 110){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MI/Loud";
+            path = "Tracks/MI/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
       
     }
     
     if(name == "Ohio") {
         if(colorAtXY.r > 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OH/Medium";
+            path = "Tracks/OH/Medium";
         }
         
         if(colorAtXY.r < 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/OH/Loud";
+            path = "Tracks/OH/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
 
     }
     
     //Check Miss Tinkle's Overture
     if(name == "Alabama") {
         if(colorAtXY.r > 80){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/AL/Medium";
+            path = "Tracks/AL/Medium";
         }
         
         if(colorAtXY.r < 80){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/AL/Loud";
+            path = "Tracks/AL/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Georgia") {
         if(colorAtXY.r > 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/GA/Medium";
+            path = "Tracks/GA/Medium";
         }
         
         if(colorAtXY.r < 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/GA/Loud";
+            path = "Tracks/GA/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
       
     }
     
     if(name == "Florida") {
         if(colorAtXY.r > 60){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/FL/Medium";
+            path = "Tracks/FL/Medium";
         }
         
         if(colorAtXY.r < 60){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/FL/Loud";
+            path = "Tracks/FL/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "South Carolina") {
-        path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/SC";
+        path = "Tracks/SC";
         ofDirectory dir(path);
         dir.listDir();
         
@@ -652,57 +506,45 @@ void ofApp::stateClicked(string name) {
     
     if(name == "North Carolina") {
         if(colorAtXY.r > 80){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NC/Medium";
+            path = "Tracks/NC/Medium";
         }
         
         if(colorAtXY.r < 80){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NC/Loud";
+            path = "Tracks/NC/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Virginia") {
         if(colorAtXY.r > 90){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/VA/Medium";
+            path = "Tracks/VA/Medium";
         }
         
         if(colorAtXY.r < 90){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/VA/Loud";
+            path = "Tracks/VA/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "West Virginia") {
         if(colorAtXY.r > 90){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WV/Medium";
+            path = "Tracks/WV/Medium";
         }
         
         if(colorAtXY.r < 90){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/WV/Loud";
+            path = "Tracks/WV/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Maryland") {
-        path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MD";
+        path = "Tracks/MD";
         ofDirectory dir(path);
         dir.listDir();
         
@@ -713,91 +555,71 @@ void ofApp::stateClicked(string name) {
     
     if(name == "Pennsylvania") {
         if(colorAtXY.r > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/PA/Medium";
+            path = "Tracks/PA/Medium";
         }
         
         if(colorAtXY.r < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/PA/Loud";
+            path = "Tracks/PA/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "New Jersey") {
         if(colorAtXY.r > 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NJ/Medium";
+            path = "Tracks/NJ/Medium";
         }
         
         if(colorAtXY.r < 70){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NJ/Loud";
+            path = "Tracks/NJ/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Connecticut") {
         if(colorAtXY.r > 80){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CT/Medium";
+            path = "Tracks/CT/Medium";
         }
         
         if(colorAtXY.r < 80){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/CT/Loud";
+            path = "Tracks/CT/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Massachusettes") {
         if(colorAtXY.r > 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MA/Medium";
+            path = "Tracks/MA/Medium";
         }
         
         if(colorAtXY.r < 120){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/MA/Loud";
+            path = "Tracks/MA/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
         
     }
     
     if(name == "Vermont") {
         if(colorAtXY.r > 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/VT/Medium";
+            path = "Tracks/VT/Medium";
         }
         
         if(colorAtXY.r < 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/VT/Loud";
+            path = "Tracks/VT/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+        playRandomTrack(path);
        
     }
     
     if(name == "New Hampshire") {
-        path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/NH";
+        path = "Tracks/NH";
         ofDirectory dir(path);
         dir.listDir();
         
@@ -808,18 +630,14 @@ void ofApp::stateClicked(string name) {
     
     if(name == "Maine") {
         if(colorAtXY.r > 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/ME/Medium";
+            path = "Tracks/ME/Medium";
         }
         
         if(colorAtXY.r < 150){
-            path = "/Users/markbrewer/Desktop/OFX2/apps/CreativeCoding/Song Map/bin/data/Tracks/ME/Loud";
+            path = "Tracks/ME/Loud";
         }
         
-        ofDirectory dir(path);
-        dir.listDir();
-        //plays a random file from the directory
-        NewNoise.load(dir.getPath(ofRandom(dir.size())));
-        NewNoise.play();
+ playRandomTrack(path);
         
     }
 }
@@ -910,6 +728,17 @@ void ofApp::updateImageRect() {
             OF_ALIGN_VERT_CENTER);
     imageScaleX = imageRect.width / soundImage.getWidth();
     imageScaleY = imageRect.height / soundImage.getHeight();
+}
+
+void ofApp::playRandomTrack(string dirPath) {
+    dir = ofDirectory(dirPath);
+    dir.listDir();
+    string song = dir.getPath(ofRandom(dir.size()));
+    songName = ofFilePath::getBaseName(song);
+    //plays a random file from the directory
+    NewNoise.load(song);
+    NewNoise.play();
+    ofLog() << songName;
 }
 
 //--------------------------------------------------------------
